@@ -40,8 +40,8 @@ export default function PlayerSetup({ onDone }: PlayerSetupProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] bg-[var(--bg-primary)] flex items-center justify-center p-4">
-      <div className="w-full max-w-sm flex flex-col gap-6 animate-in fade-in-0 slide-in-from-bottom-4 duration-500">
+    <div className="fixed inset-0 z-[1100] bg-[var(--bg-primary)] flex items-center justify-center p-4 overflow-y-auto">
+      <div className="w-full max-w-sm flex flex-col gap-6 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 py-6">
 
         {/* Logo */}
         <div className="text-center">
