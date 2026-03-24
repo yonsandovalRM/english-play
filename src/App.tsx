@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import AppLayout from './components/layout/AppLayout';
@@ -10,6 +11,11 @@ import HangmanGame from './pages/games/HangmanGame';
 import FillBlankGame from './pages/games/FillBlankGame';
 
 function App() {
+  useEffect(() => {
+    // Enable dark mode by default for shadcn
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
     <UserProvider>
       <BrowserRouter>

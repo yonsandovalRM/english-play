@@ -61,6 +61,8 @@ export type UserProgress = {
   totalAnswers: number;
   wordsLearned: string[];
   achievements: string[];
+  playerName: string;
+  avatar: string;
 };
 
 export type LevelInfo = {

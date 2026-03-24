@@ -14,6 +14,8 @@ const defaultProgress: UserProgress = {
   totalAnswers: 0,
   wordsLearned: [],
   achievements: [],
+  playerName: '',
+  avatar: '',
 };
 
 type Action =
@@ -22,6 +24,7 @@ type Action =
   | { type: 'WRONG_ANSWER' }
   | { type: 'GAME_PLAYED' }
   | { type: 'UNLOCK_ACHIEVEMENT'; payload: string }
+  | { type: 'SET_PROFILE'; payload: { playerName: string; avatar: string } }
   | { type: 'RESET' }
   | { type: 'LOAD'; payload: UserProgress };
 
@@ -85,6 +88,8 @@ function progressReducer(state: UserProgress, action: Action): UserProgress {
     case 'UNLOCK_ACHIEVEMENT':
       if (state.achievements.includes(action.payload)) return state;
       return { ...state, achievements: [...state.achievements, action.payload] };
+    case 'SET_PROFILE':
+      return { ...state, playerName: action.payload.playerName, avatar: action.payload.avatar };
     case 'RESET':
       return defaultProgress;
     case 'LOAD':
