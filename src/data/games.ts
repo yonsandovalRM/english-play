@@ -1,0 +1,122 @@
+import type { GameInfo, LevelInfo, Achievement } from '../types';
+
+export const games: GameInfo[] = [
+  {
+    id: 'hangman',
+    name: 'Hangman',
+    nameEs: 'Ahorcado',
+    description: 'Guess the word letter by letter',
+    icon: '🪢',
+    available: true,
+    color: '#6C63FF',
+  },
+  {
+    id: 'fill-blank',
+    name: 'Fill the Blank',
+    nameEs: 'Completar la Frase',
+    description: 'Complete sentences with the right word',
+    icon: '📝',
+    available: true,
+    color: '#FF6584',
+  },
+  {
+    id: 'match-pairs',
+    name: 'Match Pairs',
+    nameEs: 'Conectar Pares',
+    description: 'Match English words with Spanish translations',
+    icon: '🔗',
+    available: false,
+    color: '#00C896',
+  },
+  {
+    id: 'word-scramble',
+    name: 'Word Scramble',
+    nameEs: 'Ordenar Palabras',
+    description: 'Put the words in the right order',
+    icon: '🔀',
+    available: false,
+    color: '#FFB84D',
+  },
+  {
+    id: 'listen-type',
+    name: 'Listen & Type',
+    nameEs: 'Escucha y Escribe',
+    description: 'Listen and type what you hear',
+    icon: '🎧',
+    available: false,
+    color: '#A855F7',
+  },
+  {
+    id: 'picture-quiz',
+    name: 'Picture Quiz',
+    nameEs: '¿Qué es esto?',
+    description: 'Name the object in the picture',
+    icon: '🖼️',
+    available: false,
+    color: '#EC4899',
+  },
+  {
+    id: 'speed-round',
+    name: 'Speed Round',
+    nameEs: 'Velocidad',
+    description: 'Answer as fast as you can!',
+    icon: '⚡',
+    available: false,
+    color: '#F97316',
+  },
+];
+
+export const levels: LevelInfo[] = [
+  { level: 1, title: 'Beginner', icon: '🌱', xpRequired: 0 },
+  { level: 2, title: 'Student', icon: '📖', xpRequired: 100 },
+  { level: 3, title: 'Learner', icon: '✏️', xpRequired: 300 },
+  { level: 4, title: 'Practitioner', icon: '🎯', xpRequired: 600 },
+  { level: 5, title: 'Advanced', icon: '⭐', xpRequired: 1000 },
+  { level: 6, title: 'Expert', icon: '🏅', xpRequired: 1500 },
+  { level: 7, title: 'Master', icon: '👑', xpRequired: 2500 },
+];
+
+export const achievements: Achievement[] = [
+  {
+    id: 'first-word',
+    name: 'First Word',
+    description: 'Complete your first exercise',
+    icon: '🎯',
+    condition: (p) => p.gamesPlayed >= 1,
+  },
+  {
+    id: 'streak-7',
+    name: '7 Day Streak',
+    description: 'Practice 7 days in a row',
+    icon: '🔥',
+    condition: (p) => p.streak >= 7,
+  },
+  {
+    id: 'vocab-50',
+    name: 'Vocabulary x50',
+    description: 'Learn 50 words',
+    icon: '🧠',
+    condition: (p) => p.wordsLearned.length >= 50,
+  },
+  {
+    id: 'perfect-10',
+    name: 'Perfect 10',
+    description: 'Get 10 correct answers in a row',
+    icon: '⚡',
+    condition: (p) => p.correctAnswers >= 10,
+  },
+  {
+    id: 'games-20',
+    name: 'Game Master',
+    description: 'Play 20 game sessions',
+    icon: '🏆',
+    condition: (p) => p.gamesPlayed >= 20,
+  },
+  {
+    id: 'vocab-100',
+    name: 'Word Wizard',
+    description: 'Learn 100 words',
+    icon: '📚',
+    condition: (p) => p.wordsLearned.length >= 100,
+  },
+];
