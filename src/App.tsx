@@ -9,6 +9,7 @@ import VocabularyDetail from './pages/VocabularyDetail';
 import Profile from './pages/Profile';
 import HangmanGame from './pages/games/HangmanGame';
 import FillBlankGame from './pages/games/FillBlankGame';
+import MatchPairsGame from './pages/games/MatchPairsGame';
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
             <Route path="games" element={<Games />} />
             <Route path="games/hangman" element={<HangmanGame />} />
             <Route path="games/fill-blank" element={<FillBlankGame />} />
+            <Route path="games/match-pairs" element={<MatchPairsGame />} />
             <Route path="vocabulary" element={<Vocabulary />} />
             <Route path="vocabulary/:categoryId" element={<VocabularyDetail />} />
             <Route path="profile" element={<Profile />} />

@@ -25,7 +25,7 @@ export const games: GameInfo[] = [
     nameEs: 'Conectar Pares',
     description: 'Match English words with Spanish translations',
     icon: '🔗',
-    available: false,
+    available: true,
     color: '#00C896',
   },
   {
